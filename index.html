@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <style>
+      .load-page {
+        z-index: 9999998;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: #fff;
+      }
+
+      .load-icon {
+        z-index: 1;
+        position: absolute;
+        z-index: 9999999;
+        top: 50%;
+        left: 50%;
+        margin-left: -30px;
+      }
+
+      .load-anim-ele {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        background-image: url('//r.51gjj.com/image/static/icon-h5-page-loading.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        animation: loading 1s linear infinite;
+        -webkit-animation: loading 1s linear infinite;
+      }
+
+      @keyframes loading {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(-360deg);
+        }
+      }
+
+      @-webkit-keyframes loading {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+
+        100% {
+          -webkit-transform: rotate(-360deg);
+        }
+      }
+
+      .load-leave {
+        -webkit-transition: all 0.2s;
+        -ms-transition: all 0.2s;
+        transition: all 0.2s;
+        opacity: 0;
+        filter: alpha(opacity=(0));
+      }
+
+      #__vconsole {
+        z-index: 999999999999;
+        position: relative;
+      }
+    </style>
+    <title>app</title>
+    <script>
+      //数据统计
+      // var _jaq = _jaq || [];
+      // var ja = document.createElement('script'); ja.type = 'text/javascript'; ja.async = true;
+      // ja.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'r.51gjj.com/assets/ja.min_1.1.0.js?t=' + (new Date().getTime());
+      // var s = document.getElementsByTagName('script')[0];
+      // s.parentNode.insertBefore(ja, s);
+      // document.write("<script>var _jaq = _jaq || [];<\/script>");
+    </script>
+    <script>
+      window.SetFont = function() {
+        var a = navigator.userAgent,
+          a = !!a.match(/AppleWebKit.*Mobile.*/) || -1 == a.indexOf('Safari');
+        setFont = function(a, d, e) {
+          var f = {},
+            c = document,
+            b,
+            h =
+              (c.body && c.body.clientWidth) ||
+              c.getElementsByTagName('html')[0].offsetWidth,
+            k = window.innerHeight,
+            g = c.getElementsByTagName('html')[0];
+          f.widthProportion = function() {
+            return h / a;
+          };
+          f.changePage = function() {
+            b = f.widthProportion() * d;
+            50 < b && (b = 50);
+            g.setAttribute('style', 'font-size:' + b + 'px !important');
+            var a;
+            window.getComputedStyle &&
+              ((a = window.getComputedStyle(g, null)),
+              (a = a.fontSize),
+              (a = Number(a.replace('px', ''))),
+              a > b &&
+                g.setAttribute(
+                  'style',
+                  'font-size:' + b / (a / b) + 'px !important'
+                ));
+          };
+          f.changePage();
+          addEventListener('resize', f.changePage, !1);
+          e &&
+            ((c = e.h / e.w),
+            k / h < c - e.rate &&
+              ((e = parseInt(((k / c) * b) / h)),
+              g.setAttribute('style', 'font-size:' + e + 'px !important')));
+        };
+        if (a) setFont(750, 100);
+        else {
+          var a = function() {
+              var a =
+                document.documentElement.scrollHeight >
+                document.documentElement.clientHeight
+                  ? document.documentElement.scrollHeight
+                  : document.documentElement.clientHeight;
+              document
+                .getElementsByTagName('html')[0]
+                .setAttribute(
+                  'style',
+                  'font-size:100px !important;width: 750px;margin: 0 auto;position: relative;height:' +
+                    a +
+                    'px'
+                );
+            },
+            d = document.createElement('style');
+          d.type = 'text/css';
+          d.styleSheet
+            ? (d.styleSheet.cssText =
+                '.page-body{width: 750px !important;margin: 0 auto;}html{overflow: hidden;}')
+            : (d.innerHTML =
+                '.page-body{width: 750px !important;margin: 0 auto;}html{overflow: hidden;}');
+          document.getElementsByTagName('head')[0].appendChild(d);
+          a();
+        }
+      };
+      SetFont();
+      'undefined' != typeof document.addEventListener
+        ? addEventListener('resize', SetFont, !1)
+        : attachEvent('onresize', SetFont, !1);
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div class="load-page" id="JS_page_load_msk"></div>
+    <div class="load-icon" id="JS_page_load"><div class="load-anim-ele"></div></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

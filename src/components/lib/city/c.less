@@ -1,0 +1,499 @@
+.dw, 
+.dwo {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.dw {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    font-size: 12px;
+    text-shadow: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -ms-touch-action: none;
+    user-select: none;
+    /*touch-action: none;*/ /* Kills native scroll in Chrome >=35 */
+}
+.dw:focus {
+    /*outline-color: transparent;*/
+    outline: none;
+}
+.dw-rtl {
+    direction: rtl;
+}
+/* Box sizing */
+.dw,
+.dwbc {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.dwwr {
+    min-width: 170px;
+    zoom: 1;
+    overflow: hidden;
+    text-align: center;
+    // font-family: arial, verdana, sans-serif;
+}
+/* Modal overlay */
+.dw-persp, 
+.dwo {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.dw-persp {
+    z-index: 99999998;
+}
+.dwo {
+    z-index: 1;
+    background: #000;
+    background: rgba(51,51,51,.2);
+    filter: Alpha(Opacity=70);
+}
+/* Liquid mode */
+.dw-liq .dw {
+    max-width: 100%;
+}
+/* Top/Bottom mode */
+.dw-top .dw, 
+.dw-bottom .dw {
+    width: 100%;
+    max-width: 100%;
+}
+/* Inline mode */
+.dw-inline .dw {
+    position: static;
+    display: inline-block;
+    max-width: 100%;
+}
+.dw-inline.dw-liq .dw-persp .dw {
+    display: block;
+}
+.dw-inline .dw-persp {
+    position: static;
+}
+/* Bubble mode */
+.dw-bubble .dw {
+    margin: 20px 0;
+}
+.dw-bubble .dw-arrw {
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+.dw-bubble-top .dw-arrw {
+    bottom: -36px;
+}
+.dw-bubble-bottom .dw-arrw {
+    top: -36px;
+}
+.dw-bubble .dw-arrw-i {
+    margin: 0 30px;
+    position: relative;
+    height: 36px;
+}
+.dw-bubble .dw-arr {
+    display: block;
+}
+.dw-arr {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-width: 18px 18px;
+    border-style: solid;
+    margin-left: -18px;
+}
+.dw-bubble-bottom .dw-arr {
+    top: 0;
+}
+.dw-bubble-top .dw-arr {
+    bottom: 0;
+}
+.dw-hidden {
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+}
+/* Header */
+.dwv {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* Buttons */
+.dwb {
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+.dwb-e {
+    cursor: pointer;
+}
+.dwb-d {
+    cursor: default;
+}
+/* Button container */
+.dwbc {
+    display: table;
+    width: 100%;
+    text-align: center;
+}
+/* Button wrapper */
+.dwbw  {
+    vertical-align: top;
+    display: table-cell;
+    position: relative;
+    z-index: 5;
+}
+.dwbw .dwb:before {
+    padding: .375em;
+}
+
+
+.dwwb,
+.dwwo,
+.dwwol {
+    /*-webkit-backface-visibility: hidden;*/
+    -webkit-transform: translateZ(0);
+}
+/* Wheel container wrapper */
+.dwc {
+    max-width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* Wheel label */
+.dwl {
+    line-height: 30px;
+    height: 30px;
+    top: -30px;
+    left: 0;
+    text-align: center;
+    white-space: nowrap;
+    position: absolute;
+    width: 100%;
+}
+/* Wheel container */
+.dwwc {
+    margin: 0 auto;
+    position: relative;
+    zoom: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.dwfl {
+    max-width: 100%;
+    // -webkit-box-flex: 1;
+    // -webkit-flex: 1 auto;
+    // -ms-flex: 1 auto;
+    // flex: 1 auto;
+    flex: 1;
+}
+/* Wheels */
+.dwwl {
+    position: relative;
+    z-index: 5;
+}
+.dwww {
+    position: relative;
+    // padding: 1px;
+    /*overflow: hidden;*/
+}
+.dww {
+    overflow: hidden;
+    position: relative;
+}
+.dw-bf {
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+.dw-ul {
+    position: relative;
+    z-index: 3;
+}
+.dw-li {
+    padding: 0 5px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: bottom;
+    opacity: .3;
+    filter: Alpha(Opacity=30);
+}
+/* Valid entry */
+.dw-li.dw-v {
+    opacity: 1;
+    filter: Alpha(Opacity=100);
+    
+    .dw-i{
+      color: #a6a6a6; font-size: 18px;
+    }
+    &.dw-sel .dw-i{
+    font-size: 20px;color: #000;
+    }
+}
+
+/* Hidden entry */
+.dw-li.dw-h {
+    visibility: hidden;
+}
+.dw-i {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* Clickpick mode */
+.dwwb {
+    position: absolute;
+    z-index: 4;
+    left: 0;
+    cursor: pointer;
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+    opacity: 1;
+    -webkit-transition: opacity .2s linear;
+    transition: opacity .2s linear;
+}
+.dwa .dwwb {
+    opacity: 0;
+}
+.dwpm .dwwbp {
+    top: 0;
+}
+.dwpm .dwwbm {
+    bottom: 0;
+}
+.dwpm .dwwol {
+    display: none;
+}
+/* Wheel overlay */
+.dwwo {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+/* Background line */
+.dwwol {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+/* Liquid mode */
+.dw-liq .dwc {
+    display: block;
+}
+.dw-liq .dw-tbl {
+    width: 100%;
+    table-layout: fixed;
+}
+/* Hidden label */
+.dwhl .dwl {
+    display: none;
+}
+/* Hidden select element */
+.dw-hsel {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    left: 0;
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+}
+/* Multiple lines */
+.dw-ml .dw-li {
+    overflow: hidden;
+}
+.dw-ml .dw-li .dw-i {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+}
+/* Multiple selection */
+.dwwms .dw-li {
+    padding: 0 40px;
+}
+.dwwms .dwwol {
+    display: none;
+}
+.dw-msel:before {
+    width: 40px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/* Select groups */
+.dww .dw-w-gr {
+    padding: 0 5px;
+    opacity: 1;
+    font-weight: bold;
+    text-align: left;
+}
+
+
+.mbsc-android-holo-light .dwwr,
+.mbsc-android-holo-light .dw-cal-sc-c {
+    background: rgb(245,245,245);
+    background-color: #fff;
+}
+.mbsc-android-holo-light .dwwr,
+.mbsc-android-holo-light .dwb,
+.mbsc-android-holo-light .dw-li,
+.mbsc-android-holo-light .dw-dr,
+.mbsc-android-holo-light .dw-cal-tabs .dw-i {
+    color: rgb(0,0,0);
+}
+.mbsc-android-holo-light .dwv {
+    color: rgb(49,183,232);
+    border-bottom: 2px solid rgb(49,183,232);
+}
+.mbsc-android-holo-light .dw-hl {
+    background: rgb(49,183,232);
+    background: rgba(49,183,232,.5);
+}
+.mbsc-android-holo-light .dwwb {
+    color: rgb(125,125,125);
+    background: rgb(245,245,245);
+}
+.mbsc-android-holo-light .dwwl .dwb-a {
+    color: rgb(49,154,189);
+    background: rgb(245,245,245);
+}
+.mbsc-android-holo-light .dwwol {
+    border-top: 2px solid rgb(49,183,232);
+    border-bottom: 2px solid rgb(49,183,232);
+}
+.mbsc-android-holo-light .dwb-a {
+    background: rgb(40,121,156);
+    color: #fff;
+}
+.mbsc-android-holo-light .dwwms .dw-li:after {
+    border-color: rgb(217,213,217);
+}
+.mbsc-android-holo-light .dw-msel:before {
+    color: rgb(49,183,232);
+    text-shadow: 0 0 5px rgb(40,121,156);
+}
+.mbsc-android-holo-light .dwwo {    
+    // background: -webkit-gradient(linear,left bottom,left top,from(rgb(255,255,255)),color-stop(0.52,rgba(255,255,255,0)),color-stop(0.48,rgba(255,255,255,0)),to(rgb(255,255,255)));
+    background: -webkit-linear-gradient(top,rgba(255,255,255,1),rgba(255,255,255,0.3)40%,rgba(255,255,255,0.3)60%,rgba(255,255,255,1));
+    // background: linear-gradient(rgb(255,255,255),rgba(255,255,255,0)60%,rgba(255,255,255,0)0%,rgb(255,255,255));
+}
+.mbsc-android-holo-light .dwbc,
+.mbsc-android-holo-light .dwbw .dwb  { 
+    border-color: rgb(217,213,217);
+}
+
+
+
+.mbsc-android-holo-light {
+
+    .dw{
+        // border-radius: 8px;overflow: hidden;
+    }
+    .dwcc{
+        text-align: left;    font-size: 16px;
+    }
+    .dw-sel{
+        // font-size: 20px;
+    }
+    .dwwol{
+            border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    .dwwr{
+        padding-top: 44px;position:relative;
+    }
+    .dw-v:hover,.dw-i:hover{
+        // color: #fff;background-color: #439df8;
+    }
+    .dwbc{
+       // border-top: 1px solid #ededed;border-color: #ededed;
+       height: 44px;
+    }
+    .dwbc{
+        position: absolute;top: 0;left: 0;width: 100%;
+    }
+    .dwb-s{
+        float: right;text-align: right;
+        .dwb{
+            font-size: 13px;margin-top: 8px;margin-right: 12px;
+              border-radius: 6px;
+              text-align: center;
+              padding:0 12px;
+              height: 28px;
+              line-height: 28px;
+              display: inline-block;
+              vertical-align: top;
+              position: relative;
+              background-color: #fff;
+                color: #439df8;
+                border: 1px solid #439df8;
+        }
+    }
+    .dwb-c{
+        display: none;
+        
+    }
+    .dwbw .dwb{
+        // line-height: 46px;color: #868686;    font-size: 16px;
+    }
+    .dwb-e{
+        // border-right: 1px solid #ededed;border-color: #ededed !important;
+    }
+    .dwb-a {
+        background-color:#ededed;
+    }
+
+}
+
+// .skin-type-1 .mbsc-w-p{
+//     width: 100%;
+// }
+.skin-type-2 .dwfl{
+    width: 50%;
+}
+.skin-type-3 .dwfl{
+    width: 33.3%;
+}
+// .skin-type-3 .mbsc-w-p:nth-child(1){
+//     width: 33%;
+// }
+// .skin-type-3 .mbsc-w-p{
+//     width: 33%;
+// }

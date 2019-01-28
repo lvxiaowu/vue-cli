@@ -1,0 +1,308 @@
+@import "../common/js.less";
+body{font-size:12px;
+  color: #000;
+  background:#f5f5f5;font-family:"Microsoft Yahei",'proxima-nova',helvetica,arial;}
+input{-webkit-appearance:none;resize:none}
+body,div,ul,li,ol,h1,h2,h3,h4,h5,h6,input,textarea,select,p,dl,dt,dd,a,img,button,form,table,th,tr,td,tbody,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{-webkit-tap-highlight-color:rgba(0,0,0,0);padding:0;margin:0}h1,h2,h3,h4,h5{font-style:normal;font-weight:normal}img{border:0;display:block;border:0}.clearfix:after{content:"";display:block;visibility:hidden;height:0;clear:both}.clearfix{zoom:1}a{text-decoration:none;color:#969696}
+a:hover{color:#fed503;text-decoration:none}ul,ol{list-style:none}
+a{outline: none;}
+img{
+  display: block;
+  border: none;
+  outline: none;
+}
+
+//去掉 input 右边上下箭头
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+input:-webkit-autofill {
+-webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+// 在手机浏览器中，长按可选中文本，但如果在应用中，会给人一种异样的感觉，最好还是禁用此功能为上。
+// *:not(input):not(textarea) {
+//   -webkit-touch-callout:none;
+//   -webkit-user-select:none;
+//   -khtml-user-select:none;
+//   -moz-user-select:none;
+//   -ms-user-select:none;
+//   user-select:none;
+// }
+// 常用配置
+[v-cloak] {
+  display: none;
+}
+.hidden{
+    display:none !important;
+}
+.visibility{
+  visibility:hidden;
+}
+// 通用结构容器2
+.page-body{
+  position: absolute;top: 0;left: 0;bottom: 0;right: 0;width: 100%;z-index: 999999;overflow: hidden;overflow: hidden;font-size: 0.24rem;
+}
+.page-view{
+  width: 100%;height: 100%;position: relative;
+}
+.page-scroll{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  // height: 100%;
+  // width: 100%;
+  // overflow-y: auto;
+  // overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  z-index: 1;
+    .scroll{
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    position: absolute;z-index: 1;
+  }
+}
+#Measurement{ position: absolute;width: 100%;top: 0;bottom: 0;left: 0;z-index: -1;}
+.disable{background-color: #c4c4c4 !important;}
+.gred{color: #ff6666 !important;}
+.gblue{color: #4678e7 !important;}
+.gyellow{color: #ff7800 !important;}
+.gorange{color: #ff7800 !important;}
+.gwhite{color: #ffffff !important;}
+.ggray{color: #999999 !important;}
+.gblack{color: #333333 !important;}
+.g-center{
+  text-align: center;
+}
+.g-right{
+  text-align: right;
+}
+.h-12{height: 0.12rem;}
+.h-24{height: 0.24rem;}
+.h-48{height: 0.48rem;}
+.h-96{height: 0.96rem;}
+.h-space{height: 1.68rem;}
+a{color:#4678e7;}
+
+.data-none{
+  position: absolute;left: 0;right: 0;top: 50%;
+  &:before{
+    display: block;
+    content: "";
+    .icon("icon_mall_data_none.png");
+    width: 1.46rem;height: 1.72rem;
+    margin: 0 auto;
+  }
+  p{
+    color: #999999;font-size: 0.28rem;text-align: center;
+    padding-top: 0.36rem;
+  }
+  &.none-icon&:before{
+    display: none;
+    
+  }
+  .transform(translateY(-50%))
+}
+//错误提示
+
+.Toast{
+  background-color: rgba(250, 100, 100, 0.9);
+  color: #fff;
+  width: 100%;
+  position:fixed;left: 0;
+  top:0;
+  z-index:9999999;
+  font-size:0.28rem;text-align: center;
+  color:#ffffff;height: 1rem;
+  p{
+    padding: 0.24rem 0.48rem;line-height: 0.48rem;height: 0.48rem;overflow:hidden; white-space:nowrap;text-overflow : ellipsis
+  }
+  &.success{
+    background-color: #04be02;
+    background-color: rgba(4, 190, 2, 0.9);
+  }
+  &.black{
+    font-size: 0.28rem;
+    line-height: 0.48rem;
+    background-color: rgba(0,0,0,.55);
+    text-align: center;
+    padding: 0.4rem 0.24rem;
+    left: 50%;top: 30%;
+    border-radius: 0.2rem;
+    z-index: 9999999;
+    color: #fff;
+    height: auto;
+    max-width: 80%;width: auto;
+    position: absolute;
+    .transform(translate(-50%,-50%));
+    p {
+      padding: 0;
+      line-height: 0.4rem;
+      height: auto;
+      white-space: initial
+    }
+  }
+}
+
+
+
+//按钮提交效果
+.g-btn{
+  font-size: 0.36rem;
+  text-align: center;
+  line-height: 0.96rem;
+  height: 0.96rem;
+  display: block;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  .transition(background-color  0.25s ease-in-out);
+  box-sizing: border-box;
+  background-color: #4678e7;
+  color: #ffffff;
+  &:active{
+    background-color: #5a89f2;
+  }
+  &.btn-blue{
+    background-color: #4678e7;
+    color: #ffffff;
+    &:active{
+      background-color: #5a89f2;
+    }
+  }
+  &.btn-red{
+    background-color: #ff6666;
+    color: #ffffff;
+    &:active{
+      background-color: #fa7d7d;
+    }
+  }
+  &.btn-gray{
+    background-color: #bcc0ca ;
+    color:#ffffff;
+    padding: 0;
+    &:active{
+      background-color: #b2b7c5;
+    }
+  }
+  &.btn-white{
+    color: #444444;border: 1px solid #bcc0ca;
+    background-color: #fff;
+  }
+  &.btn-white-blue{
+    color: #4678e7;border: 1px solid #4678e7;
+    background-color: #fff;
+  }
+  &.btn-whiteGray{
+    color: #bcc0ca;border: 1px solid #bcc0ca;
+    background-color: #fff;
+  }
+  //禁用状态
+  &.disable{
+    background-color: #b9b9b9;
+    color: #868686;
+    // padding: 1px;
+    border: none;
+    &:active{
+      background-color: #b9b9b9;
+      color: #868686;
+    }
+  }
+}
+
+//弹窗
+.dialog-pop-msk{
+        position: absolute;top: 0;left: 0;width: 100%;height: 100%;
+      z-index: 999998;display: block;
+      background-color: rgba(0,0,0,0.6);
+}
+.dialog-pop{
+    position: absolute;
+    top: 0;left: 0;width: 100%;bottom: 0;
+    z-index: 999999;
+    text-align:center;
+    font-size:0;
+    &:after{
+      content:'';
+      width:0;
+      height:100%;
+      display:inline-block;
+      vertical-align:middle;
+    }
+    .pop-content{
+      position: relative;width: 100%;height: 100%;
+    }
+    .pop-info{
+        position: relative;z-index: 2;display: inline-block;vertical-align: middle;
+        width: 84%;
+        //margin:0 8%;
+    }
+    &.square{
+      .info{
+        border-radius: 0;
+      }
+    }
+    .msk-click{
+      position: absolute;top: 0;left: 0;width: 100%;bottom: 0;
+    }
+    .info{
+        background-color: #fff;overflow: hidden;
+
+        border-radius: 2px;
+        dt{
+            font-size: 0.4rem;color: #4678e7;
+            line-height: 0.56rem;
+            text-align: center;
+            padding-top: 0.3rem;padding-bottom: 0.2rem;
+        }
+        dd{
+            color: #333333;font-size: 0.32rem;padding:0 0.4rem;
+        }
+        .line{
+            line-height: 0.4rem;padding: 0.06rem 0.4rem;
+            a{
+              color: #4678e7;
+              text-decoration: underline;
+            }
+        }
+        .btn-box{
+          margin-top: 0.24rem;
+          height: 0.96rem;border-top: 1px solid #eeeeee;padding: 0;position: relative;width: 100%;
+          .btn{
+            text-align: center;line-height: 0.96rem;float: left;color: #868686;font-size: 0.32rem;position: relative;height: 0.96rem;
+            &:active{
+              background-color: #f5f5f5;
+            }
+          }
+          .btn{width: 100%;margin-top:0.24rem;}
+          &.b-1{
+            .btn{width: 100%;margin-top: 0;}
+          }
+          &.b-2{
+            .btn{width: 50%;margin-top: 0;}
+            span.bd{
+              width: 1px;height: 100%;background-color: #eeeeee;display: block;position: absolute;top: 0;left: 50%;
+            }
+          }
+        }
+        .space{height: 0.24rem;}
+        .font14{
+          font-size: 0.28rem !important;
+        }
+        .blue{
+          color: #4678e7 !important;
+        }
+        .gray{color: #a6a6a6 !important;}
+
+
+    }
+
+}
+@import "../common/vue.less";

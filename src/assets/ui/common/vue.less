@@ -1,0 +1,190 @@
+@import "../common/js.less";
+// vue.js 动画
+// 
+/*页面切换中动画*/
+// 默认
+.page-forward-enter-active,
+.page-back-enter-active,
+.page-forward-leave-active,
+.page-back-leave-active
+{  
+  .transition(transform 0.4s);
+  position: absolute;
+}
+.page-forward-enter,
+.page-back-leave-active
+{
+  .transform(translate(100%)); 
+}
+.page-forward-enter,.page-back-leave-active,.page-forward-enter-to,.page-back-leave-to{
+  z-index: 2 !important; 
+}
+
+
+
+//上滑
+.sildeUp-forward-enter-active,
+.sildeUp-back-enter-active,
+.sildeUp-forward-leave-active,
+.sildeUp-back-leave-active
+{  
+  .transition(all 0.5s);
+}
+.sildeUp-forward-enter,
+.sildeUp-back-leave-active
+{
+  .transform(translateY(100%));
+}
+.sildeUp-forward-leave-active,
+.sildeUp-back-enter
+{
+  .transform(translateY(-100%)); opacity: 0; 
+}
+.sildeUp-forward-enter,.sildeUp-back-leave-active,.sildeUp-forward-enter-to,.sildeUp-back-leave-to{
+  z-index: 2 !important; 
+}
+
+
+
+
+
+/*页面切换中动画 end*/
+.switch-enter-active, .switch-leave-active {
+  .transition(transform .5s);
+}
+.switch-enter{
+  .transform(translateX(100%));
+}
+.switch-leave-active {
+  .transform(translateX(-100%));
+}
+// 渐隐渐现
+.fade-enter-active, .fade-leave-active {
+  .transition(opacity .5s);
+}
+.fade-enter, .fade-leave-active {
+  .opacity(0)
+}
+.list-enter-active {
+  .transition(all .4s);
+  // opacity: 1;
+  // .transform(scale(1));
+}
+.list-enter{
+  opacity: 0;
+  .transform(translateX(20%));
+
+}
+//顶部下降
+.top-enter-active, .top-leave-active {
+  .transition(transform .5s);
+}
+.top-enter, .top-leave-active {
+  .transform(translate(0, -100%));
+}
+.left-enter-active, .left-leave-active {
+  .transition(transform .5s);
+}
+.left-enter, .left-leave-active {
+  .transform(translateX(10%));
+}
+// //底部升起
+.bottom-enter-active, .bottom-leave-active {
+  .transition(transform .5s);
+}
+.bottom-enter, .bottom-leave-active {
+  .transform(translate(0, 100%));
+}
+//底部升起
+.bottomFade-enter-active, .bottomFade-leave-active {
+  .transition(all .5s);
+}
+.bottomFade-enter, .bottomFade-leave-active {
+  .transform(translate(0, 100%));
+  .opacity(0)
+}
+.scale-enter-active, .scale-leave-active {
+  .transition(all .4s);
+  .opacity(1);
+  .transform(scale(1));
+}
+.scale-enter, .scale-leave-active {
+  .opacity(0);
+  .transform(scale(0.7));
+}
+
+.scaleBig-leave-active {
+  .transition(all .4s);
+  .opacity(1);
+  .transform(scale(1));
+}
+.scaleBig-leave-active {
+  .opacity(0);
+  .transform(scale(1.5));
+}
+// //放大  圆点在顶部
+.scaleT-enter-active, .scaleT-leave-active {
+  // transform-origin:top center;
+  .pre(transform-origin,top center);
+  .transition(all .5s);
+  .opacity(1);
+  .transform(scale(1));
+}
+.scaleT-enter, .scaleT-leave-active {
+  .opacity(0);
+  .transform(scale(0.5));
+}
+
+// 弹窗
+//容器
+.DgScale-enter-active{
+  .transition(all .4s);
+  .opacity(1);
+  .transform(scale(1));
+  margin-top: 0;
+}
+.DgScale-enter {
+  .opacity(0);
+  .transform(scale(0.5));
+}
+.DgScale-leave-active {
+  .transition(all 0.4s);
+  .opacity(0.8);
+  .transform(scale(1));
+  margin-top: 0;
+}
+.DgScale-leave-active {
+  .opacity(0);
+  .transform(scale(0.5));
+}
+//loading
+.data-loading{
+    width: 30px;
+    height: 30px;
+    border: 1px #4678e7 solid;
+    border-radius: 50%;
+    -webkit-animation: rotation 1s ease-in-out infinite;
+       -moz-animation: rotation 1s ease-in-out infinite;
+            animation: rotation 1s ease-in-out infinite;
+    margin:0 auto;
+    &:after{
+      width: 8px;
+      height: 8px;
+      background-color: #4678e7;
+      border-radius: 100%;
+      position: absolute;
+      content: "";
+  }
+}
+@-webkit-keyframes rotation{
+    0%{-webkit-transform: rotate(0deg);}
+    100%{-webkit-transform: rotate(360deg);}
+}
+@-moz-keyframes rotation{
+    0%{-moz-transform: rotate(0deg);}
+    100%{-moz-transform: rotate(360deg);}
+}
+@keyframes rotation{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}

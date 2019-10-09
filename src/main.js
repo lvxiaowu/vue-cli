@@ -33,7 +33,7 @@ let h = window.location.host;
 
 //非正式服环境
 if (h != 'x.xxx.com') {
-  var vc = new VConsole();
+  // var vc = new VConsole();
   // 在入口处引入模拟的假数据;
   require('@/mock');
 }

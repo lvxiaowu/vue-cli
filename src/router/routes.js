@@ -1,6 +1,6 @@
 import Index from '@/views/Index';
 import Hello from '@/views/Hello';
-import World from '@/views/World';
+import Filter from '@/views/Filter';
 import Login from '@/views/Login';
 
 // meta 配置说明
@@ -12,15 +12,15 @@ export default [
     path: '/index',
     name: 'Index',
     component: Index,
-    meta:{
+    meta: {
       title: '首页',
       requiresAuth: false,
-      animate:''  
+      animate: ''
     },
     children: [
       {
         path: 'bar',
-        name:'Bar',
+        name: 'Bar',
         component: Index,
         meta: { requiresAuth: false }
       }
@@ -30,18 +30,18 @@ export default [
     path: '/hello',
     name: 'Hello',
     component: Hello,
-     meta:{
+    meta: {
       title: 'hello',
-      requiresAuth: false,
-      // animate: 'xx'  
+      requiresAuth: false
+      // animate: 'xx'
     }
   },
-   {
-    path: '/world',
-    name: 'World',
-    component: World,
-    meta:{
-      title: 'hello',
+  {
+    path: '/filter',
+    name: 'Filter',
+    component: Filter,
+    meta: {
+      title: 'Filter',
       requiresAuth: false
     }
   },
@@ -49,10 +49,9 @@ export default [
     path: '/login',
     name: 'Login',
     component: Login,
-      meta:{
-        title: '登录',
-        requiresAuth: false
+    meta: {
+      title: '登录',
+      requiresAuth: false
     }
-  },
- 
+  }
 ];
